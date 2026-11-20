@@ -6,6 +6,7 @@ import {
   Truck, ExternalLink, Activity, Wallet, Image, Megaphone,
 } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
+import { LanguageSwitcher } from '../contexts/LanguageContext'
 import { AscendLogo } from '../components/brand/AscendLogo'
 
 const navItems = [
@@ -101,6 +102,7 @@ export function AdminLayout({ children }: { children: ReactNode }) {
             <Menu className="h-5 w-5" />
           </button>
           <div className="flex items-center gap-3 text-xs font-bold text-slate-600">
+            <LanguageSwitcher />
             <span className="px-3 py-1 rounded-full bg-orange-50 text-[#FF5A36]">
               {user?.email}
             </span>

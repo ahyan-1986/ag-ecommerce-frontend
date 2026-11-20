@@ -12,15 +12,15 @@ import { useLanguage } from '../../contexts/LanguageContext'
 
 const MOCK_DETAILS_BY_LANG = {
   bm: {
-    'asianmum-purple-sweet-potato': {
-      name: 'Asian Mum Prebiotik Ubi Ungu (15 Paket x 20g)',
+    'ascend-purple-sweet-potato': {
+      name: 'Ascend Group Prebiotik Ubi Ungu (15 Paket x 20g)',
       category: 'Minuman Prebiotik',
       tag: '💜 Dopamine Violet',
       retailPrice: 58.00,
       dealerPrice: 42.00,
       bv: 35.00,
       pv: 20.00,
-      imageUrl: '/images/products/purple-sweet-potato.jpg',
+      imageUrl: '/images/products/ascend-violet.jpg',
       tagClass: 'tag-dopamine-purple',
       highlights: [
         '10.4g Serat Prebiotik Inulin setiap hidangan',
@@ -38,15 +38,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: 'Protein', val: '1.2g' },
       ],
     },
-    'asianmum-avocado-moringa': {
-      name: 'Asian Mum Prebiotik Avokado & Moringa Superfood (15 Paket x 20g)',
+    'ascend-avocado-moringa': {
+      name: 'Ascend Group Prebiotik Avokado & Moringa Superfood (15 Paket x 20g)',
       category: 'Superfood Avokado',
       tag: '🥑 Dopamine Lime',
       retailPrice: 62.00,
       dealerPrice: 45.00,
       bv: 38.00,
       pv: 22.00,
-      imageUrl: '/images/products/avocado-moringa.jpg',
+      imageUrl: '/images/products/ascend-matcha.jpg',
       tagClass: 'tag-dopamine-green',
       highlights: [
         'Kaya Vitamin E & Selenium untuk perlindungan sel dari stres oksidatif',
@@ -64,15 +64,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: 'Gula Tambahan', val: '0g' },
       ],
     },
-    'asianmum-beaufica-cranberry': {
-      name: 'Asian Mum Beaufica Kranberi & Kacip Fatimah (20 Sachet x 3g)',
+    'ascend-ascend-berry-cranberry': {
+      name: 'Ascend Group Ascend Berry Bloom Kranberi & Kacip Fatimah (20 Sachet x 3g)',
       category: 'Kesihatan Wanita & Botani',
       tag: '🌸 Dopamine Coral',
       retailPrice: 78.00,
       dealerPrice: 55.00,
       bv: 48.00,
       pv: 28.00,
-      imageUrl: '/images/products/beaufica-cranberry.jpg',
+      imageUrl: '/images/products/ascend-berry-cranberry.jpg',
       tagClass: 'tag-dopamine-coral',
       highlights: [
         'Ekstrak Kacip Fatimah (Labisia pumila) gred premium untuk kesihatan dalaman wanita',
@@ -91,15 +91,15 @@ const MOCK_DETAILS_BY_LANG = {
     },
   },
   en: {
-    'asianmum-purple-sweet-potato': {
-      name: 'Asian Mum Purple Sweet Potato Prebiotic (15 Sachets x 20g)',
+    'ascend-purple-sweet-potato': {
+      name: 'Ascend Group Purple Sweet Potato Prebiotic (15 Sachets x 20g)',
       category: 'Prebiotic Drinks',
       tag: '💜 Dopamine Violet',
       retailPrice: 58.00,
       dealerPrice: 42.00,
       bv: 35.00,
       pv: 20.00,
-      imageUrl: '/images/products/purple-sweet-potato.jpg',
+      imageUrl: '/images/products/ascend-violet.jpg',
       tagClass: 'tag-dopamine-purple',
       highlights: [
         '10.4g Prebiotic Inulin dietary fibre per serving',
@@ -117,15 +117,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: 'Protein', val: '1.2g' },
       ],
     },
-    'asianmum-avocado-moringa': {
-      name: 'Asian Mum Avocado & Moringa Superfood Prebiotic (15 Sachets x 20g)',
+    'ascend-avocado-moringa': {
+      name: 'Ascend Group Avocado & Moringa Superfood Prebiotic (15 Sachets x 20g)',
       category: 'Avocado Superfood',
       tag: '🥑 Dopamine Lime',
       retailPrice: 62.00,
       dealerPrice: 45.00,
       bv: 38.00,
       pv: 22.00,
-      imageUrl: '/images/products/avocado-moringa.jpg',
+      imageUrl: '/images/products/ascend-matcha.jpg',
       tagClass: 'tag-dopamine-green',
       highlights: [
         'Packed with Vitamin E & Selenium for cellular antioxidant defense',
@@ -143,15 +143,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: 'Added Sugar', val: '0g' },
       ],
     },
-    'asianmum-beaufica-cranberry': {
-      name: 'Asian Mum Beaufica Cranberry & Kacip Fatimah (20 Sachets x 3g)',
+    'ascend-ascend-berry-cranberry': {
+      name: 'Ascend Group Ascend Berry Bloom Cranberry & Kacip Fatimah (20 Sachets x 3g)',
       category: 'Women’s Wellness & Botanicals',
       tag: '🌸 Dopamine Coral',
       retailPrice: 78.00,
       dealerPrice: 55.00,
       bv: 48.00,
       pv: 28.00,
-      imageUrl: '/images/products/beaufica-cranberry.jpg',
+      imageUrl: '/images/products/ascend-berry-cranberry.jpg',
       tagClass: 'tag-dopamine-coral',
       highlights: [
         'Pure Kacip Fatimah extract to balance female hormonal rhythm',
@@ -170,15 +170,15 @@ const MOCK_DETAILS_BY_LANG = {
     },
   },
   cn: {
-    'asianmum-purple-sweet-potato': {
-      name: 'Asian Mum 紫薯益生元高纤饮 (15包 x 20g)',
+    'ascend-purple-sweet-potato': {
+      name: 'Ascend Group 紫薯益生元高纤饮 (15包 x 20g)',
       category: '益生元高纤饮',
       tag: '💜 多巴胺梦幻紫',
       retailPrice: 58.00,
       dealerPrice: 42.00,
       bv: 35.00,
       pv: 20.00,
-      imageUrl: '/images/products/purple-sweet-potato.jpg',
+      imageUrl: '/images/products/ascend-violet.jpg',
       tagClass: 'tag-dopamine-purple',
       highlights: [
         '每份含 10.4g 益生元天然菊粉膳食纤维',
@@ -196,15 +196,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: '蛋白质', val: '1.2克' },
       ],
     },
-    'asianmum-avocado-moringa': {
-      name: 'Asian Mum 牛油果辣木超级食物益生元饮 (15包 x 20g)',
+    'ascend-avocado-moringa': {
+      name: 'Ascend Group 牛油果辣木超级食物益生元饮 (15包 x 20g)',
       category: '牛油果超级食物',
       tag: '🥑 多巴胺牛油果绿',
       retailPrice: 62.00,
       dealerPrice: 45.00,
       bv: 38.00,
       pv: 22.00,
-      imageUrl: '/images/products/avocado-moringa.jpg',
+      imageUrl: '/images/products/ascend-matcha.jpg',
       tagClass: 'tag-dopamine-green',
       highlights: [
         '富含维生素 E 与微量元素硒，全方位保护细胞抗氧化',
@@ -222,15 +222,15 @@ const MOCK_DETAILS_BY_LANG = {
         { label: '添加蔗糖', val: '0克' },
       ],
     },
-    'asianmum-beaufica-cranberry': {
-      name: 'Asian Mum Beaufica 蔓越莓卡琪花蒂玛植物饮 (20条 x 3g)',
+    'ascend-ascend-berry-cranberry': {
+      name: 'Ascend Group Ascend Berry Bloom 蔓越莓卡琪花蒂玛植物饮 (20条 x 3g)',
       category: '女性草本调理',
       tag: '🌸 多巴胺珊瑚粉',
       retailPrice: 78.00,
       dealerPrice: 55.00,
       bv: 48.00,
       pv: 28.00,
-      imageUrl: '/images/products/beaufica-cranberry.jpg',
+      imageUrl: '/images/products/ascend-berry-cranberry.jpg',
       tagClass: 'tag-dopamine-coral',
       highlights: [
         '特级纯正卡琪花蒂玛萃取，温和平衡女性内分泌与雌激素',
@@ -268,8 +268,8 @@ export default function ProductDetailPage() {
   })
 
   const langMap = MOCK_DETAILS_BY_LANG[lang] || MOCK_DETAILS_BY_LANG.bm
-  const fallbackKey = (slug || 'asianmum-purple-sweet-potato') as keyof typeof langMap
-  const fallback = langMap[fallbackKey] || langMap['asianmum-purple-sweet-potato']
+  const fallbackKey = (slug || 'ascend-purple-sweet-potato') as keyof typeof langMap
+  const fallback = langMap[fallbackKey] || langMap['ascend-purple-sweet-potato']
 
   const addToCart = useMutation({
     mutationFn: () => {
@@ -365,7 +365,7 @@ export default function ProductDetailPage() {
               {displayTitle}
             </h1>
             <p className="text-xs text-gray-500 mt-1 flex items-center gap-2">
-              <span>{t.productDetail.brand}: <strong>Asian Mum</strong></span>
+              <span>{t.productDetail.brand}: <strong>Ascend Group</strong></span>
               <span>•</span>
               <span className="text-emerald-700 font-bold">{t.productDetail.inStock}</span>
             </p>

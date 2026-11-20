@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Sparkles, Gift, Users, Crown, ShoppingBag, Star, CheckCircle2 } from 'lucide-react'
 import { productsApi } from '../api/products'
+import { useLanguage } from '../contexts/LanguageContext'
 import { PublicStoreLayout } from '../layouts/PublicStoreLayout'
 import { TierBadge } from '../components/tier/TierBadge'
 
 export default function LandingPage() {
+  const { isZh } = useLanguage()
   const { data: featuredRes } = useQuery({
     queryKey: ['featured-products'],
     queryFn: () => productsApi.list({ featured: true, pageSize: 4 }),
@@ -30,35 +32,61 @@ export default function LandingPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-                Fuel Your{' '}
-                <span className="bg-gradient-to-r from-[#FF5A36] via-[#FF8A00] to-[#EC4899] bg-clip-text text-transparent">
-                  Vibrant Glow.
-                </span>
-                <br />
-                Grow &amp;{' '}
-                <span className="bg-gradient-to-r from-[#00C896] to-[#06B6D4] bg-clip-text text-transparent">
-                  Earn Together.
-                </span>
+                {isZh ? (
+                  <>
+                    点燃你的{' '}
+                    <span className="bg-gradient-to-r from-[#FF5A36] via-[#FF8A00] to-[#EC4899] bg-clip-text text-transparent">
+                      多巴胺活力。
+                    </span>
+                    <br />
+                    共享成长{' '}
+                    <span className="bg-gradient-to-r from-[#00C896] to-[#06B6D4] bg-clip-text text-transparent">
+                      天天赚回馈。
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Fuel Your{' '}
+                    <span className="bg-gradient-to-r from-[#FF5A36] via-[#FF8A00] to-[#EC4899] bg-clip-text text-transparent">
+                      Vibrant Glow.
+                    </span>
+                    <br />
+                    Grow &amp;{' '}
+                    <span className="bg-gradient-to-r from-[#00C896] to-[#06B6D4] bg-clip-text text-transparent">
+                      Earn Together.
+                    </span>
+                  </>
+                )}
               </h1>
 
               <p className="text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
-                Discover joyful daily superfoods designed for unstoppable energy — and unlock{' '}
-                <strong className="text-slate-900">15% Self Rebate</strong>,{' '}
-                <strong className="text-slate-900">15% 2-Level Referral Rebates</strong>, and up to{' '}
-                <strong className="text-slate-900">45% Leadership Bonus</strong> as you ascend our 4-star circle!
+                {isZh ? (
+                  <>
+                    探索天然植萃多巴胺营养饮品，每笔订单立享 <strong className="text-slate-900">15% 自购回馈</strong>、
+                    <strong className="text-slate-900">2 代好友各 15% 推荐奖</strong>，以及高达{' '}
+                    <strong className="text-slate-900">45% 领袖级差奖金</strong>！
+                  </>
+                ) : (
+                  <>
+                    Discover joyful daily superfoods designed for unstoppable energy — and unlock{' '}
+                    <strong className="text-slate-900">15% Self Rebate</strong>,{' '}
+                    <strong className="text-slate-900">15% 2-Level Referral Rebates</strong>, and up to{' '}
+                    <strong className="text-slate-900">45% Leadership Bonus</strong> as you ascend our 4-star circle!
+                  </>
+                )}
               </p>
 
               <div className="flex flex-wrap gap-3.5 pt-2">
                 <Link to="/shop" className="btn-primary !px-8 !py-3.5 !text-base">
                   <ShoppingBag className="w-5 h-5" />
-                  Explore Shop
+                  {isZh ? '探索商城' : 'Explore Shop'}
                 </Link>
                 <Link to="/membership" className="btn-mint !px-7 !py-3.5 !text-base">
                   <Crown className="w-5 h-5" />
-                  See Ascend Tiers
+                  {isZh ? '查看会员层级' : 'See Ascend Tiers'}
                 </Link>
                 <Link to="/register" className="btn-secondary !px-7 !py-3.5 !text-base">
-                  Join Free
+                  {isZh ? '免费加入' : 'Join Free'}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

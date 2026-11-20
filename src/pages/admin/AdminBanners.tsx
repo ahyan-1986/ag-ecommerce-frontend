@@ -8,9 +8,9 @@ const GOLD = '#C5963B'
 
 const URL_PRESETS = [
   { label: 'Semua Produk (/shop)', url: '/shop' },
-  { label: 'Prebiotik Ubi Ungu', url: '/products/asianmum-purple-sweet-potato' },
-  { label: 'Avokado & Moringa', url: '/products/asianmum-avocado-moringa' },
-  { label: 'Beaufica Kranberi', url: '/products/asianmum-beaufica-cranberry' },
+  { label: 'Prebiotik Ubi Ungu', url: '/products/ascend-purple-sweet-potato' },
+  { label: 'Avokado & Moringa', url: '/products/ascend-avocado-moringa' },
+  { label: 'Ascend Berry Bloom Kranberi', url: '/products/ascend-ascend-berry-cranberry' },
   { label: 'Daftar Usahawan (/register)', url: '/register' },
   { label: 'AI Nutri-Advisor (/ai-chat)', url: '/ai-chat' },
 ]
@@ -189,7 +189,7 @@ export default function AdminBanners() {
                     value={currentBanner.linkUrl || ''}
                     onChange={e => setCurrentBanner({ ...currentBanner, linkUrl: e.target.value })}
                     className="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-600 outline-none text-gray-900"
-                    placeholder="/products/asianmum-purple-sweet-potato"
+                    placeholder="/products/ascend-purple-sweet-potato"
                   />
                 </div>
 
@@ -297,7 +297,7 @@ export default function AdminBanners() {
                     </div>
                   </td>
                   <td className="px-6 py-4 space-y-1">
-                    <p className="font-bold text-white text-sm">{banner.title || 'Banner Promosi Asian Mum'}</p>
+                    <p className="font-bold text-white text-sm">{banner.title || 'Banner Promosi Ascend Group'}</p>
                     {banner.subtitle && <p className="text-[11px] text-gray-400 line-clamp-1">{banner.subtitle}</p>}
                     {banner.linkUrl ? (
                       <p className="text-[11px] text-amber-300 font-semibold flex items-center gap-1">

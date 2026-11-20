@@ -222,7 +222,7 @@ function ProductEditorModal({ product, onClose }: { product?: AdminProduct; onCl
   const [sku, setSku] = useState(product?.sku ?? '')
   const [description, setDescription] = useState(product?.description ?? '')
   const [category, setCategory] = useState(product?.category ?? '')
-  const [brand, setBrand] = useState(product?.brand ?? 'AsianMum')
+  const [brand, setBrand] = useState(product?.brand ?? 'Ascend Group')
   const [tags, setTags] = useState(parseJsonArr(product?.tags ?? '').join(', '))
   const [status, setStatus] = useState<ProductStatus>(product?.status ?? 'draft')
   const [isFeatured, setIsFeatured] = useState(product?.isFeatured ?? false)
@@ -348,7 +348,7 @@ function ProductEditorModal({ product, onClose }: { product?: AdminProduct; onCl
               </div>
               <div>
                 <Label>Brand</Label>
-                <input className="dark-input mt-1" value={brand} placeholder="AsianMum" onChange={e => setBrand(e.target.value)} />
+                <input className="dark-input mt-1" value={brand} placeholder="Ascend Group" onChange={e => setBrand(e.target.value)} />
               </div>
               <div className="sm:col-span-2">
                 <Label>Description</Label>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Mail, ArrowLeft } from 'lucide-react'
 import { useLanguage, LanguageSwitcher } from '../../contexts/LanguageContext'
 
-const LOGO  = '/images/logo.png'
+import { AscendLogo } from '../../components/brand/AscendLogo'
 const OLIVE = '#2F4C2C'
 
 export default function ForgotPasswordPage() {
@@ -63,7 +63,7 @@ export default function ForgotPasswordPage() {
 
       <div className="max-w-md w-full mx-auto my-auto z-10">
         <div className="flex justify-center mb-6">
-          <img src={LOGO} alt="Asian Mum" className="h-14 w-auto rounded-2xl bg-white p-1 shadow-lg" />
+          <AscendLogo size="lg" showTagline />
         </div>
 
         <div className="bg-white rounded-3xl p-8 shadow-2xl border border-emerald-900/10">
@@ -98,7 +98,7 @@ export default function ForgotPasswordPage() {
       </div>
 
       <div className="max-w-md w-full mx-auto text-center text-xs text-emerald-200/50 z-10 pt-4">
-        © {new Date().getFullYear()} Asian Mum.
+        © {new Date().getFullYear()} Ascend Group.
       </div>
     </div>
   )

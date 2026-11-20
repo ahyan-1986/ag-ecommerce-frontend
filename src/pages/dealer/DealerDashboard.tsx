@@ -26,7 +26,7 @@ export default function DealerDashboard() {
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-2">
             <Crown className="h-5 w-5 text-amber-300" />
-            <span className="text-amber-300 text-xs font-bold uppercase tracking-wider">Portal Rakan Niaga Asian Mum</span>
+            <span className="text-amber-300 text-xs font-bold uppercase tracking-wider">Portal Rakan Niaga Ascend Group</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-white">
             Selamat Datang, Usahawan {user?.firstName}! 🌿
@@ -50,7 +50,7 @@ export default function DealerDashboard() {
           </div>
           <div>
             <p className="font-bold text-white text-sm">Pesanan Borong</p>
-            <p className="text-xs text-gray-400 mt-0.5">Beli produk Asian Mum pada harga diskaun usahawan</p>
+            <p className="text-xs text-gray-400 mt-0.5">Beli produk Ascend Group pada harga diskaun usahawan</p>
           </div>
         </Link>
 

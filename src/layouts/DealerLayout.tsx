@@ -6,7 +6,7 @@ import { LanguageSwitcher } from '../contexts/LanguageContext'
 
 const OLIVE_GREEN = '#3A5D36'
 const GOLD        = '#C5963B'
-const LOGO        = '/images/logo.png'
+import { AscendLogo } from '../components/brand/AscendLogo'
 
 const navItems = [
   { to: '/dealer',         label: 'Papan Pemuka',       icon: LayoutDashboard, end: true },
@@ -28,9 +28,9 @@ export function DealerLayout({ children }: { children: ReactNode }) {
         <div className="flex h-16 items-center justify-between px-5"
           style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <Link to="/" className="flex items-center gap-3">
-            <img src={LOGO} alt="Asian Mum" className="h-9 w-auto rounded-lg bg-white/90 p-1 object-contain" />
+            <AscendLogo size="sm" />
             <div>
-              <p className="text-sm font-black text-white leading-none">Asian Mum</p>
+              <p className="text-sm font-black text-white leading-none">Ascend Group</p>
               <p className="text-[9px] text-amber-300 font-bold uppercase tracking-widest mt-0.5">Rakan Niaga</p>
             </div>
           </Link>

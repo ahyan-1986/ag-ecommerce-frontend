@@ -14,11 +14,13 @@ import {
   Banknote,
 } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
+import { useLanguage } from '../contexts/LanguageContext'
 import { AppHeader } from '../components/navigation/AppHeader'
 import { TierBadge } from '../components/tier/TierBadge'
 
 export function CustomerLayout({ children }: { children: ReactNode }) {
   const { user } = useAuth()
+  const { isZh } = useLanguage()
   const location = useLocation()
 
   const loyaltyRoutes = ['/loyalty', '/referral', '/wallet', '/withdrawals']
@@ -28,27 +30,27 @@ export function CustomerLayout({ children }: { children: ReactNode }) {
   const registerFriendLink = user?.referralCode ? `/register/${user.referralCode}` : '/register'
 
   const topItems = [
-    { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { to: '/announcements', label: 'Announcements', icon: Megaphone },
-    { to: '/profile', label: 'My Profile', icon: UserCircle },
-    { to: registerFriendLink, label: 'Register a Friend', icon: UserPlus },
-    { to: '/orders', label: 'My Orders', icon: ShoppingBag },
-    { to: '/vouchers', label: 'My Vouchers', icon: Ticket },
+    { to: '/dashboard', label: isZh ? '会员首页' : 'Dashboard', icon: LayoutDashboard },
+    { to: '/announcements', label: isZh ? '最新公告' : 'Announcements', icon: Megaphone },
+    { to: '/profile', label: isZh ? '个人资料' : 'My Profile', icon: UserCircle },
+    { to: registerFriendLink, label: isZh ? '邀请好友注册' : 'Register a Friend', icon: UserPlus },
+    { to: '/orders', label: isZh ? '我的订单' : 'My Orders', icon: ShoppingBag },
+    { to: '/vouchers', label: isZh ? '我的优惠券' : 'My Vouchers', icon: Ticket },
   ]
 
   const loyaltyChildren = [
-    { to: '/loyalty', label: 'Loyalty Overview', icon: Gift },
-    { to: '/referral', label: 'My Ascend Circle', icon: Users },
-    { to: '/wallet', label: 'Recent Loyalty Points Activities', icon: Activity },
-    { to: '/withdrawals', label: 'Redeem Rewards', icon: Banknote },
+    { to: '/loyalty', label: isZh ? '积分奖励总览' : 'Loyalty Overview', icon: Gift },
+    { to: '/referral', label: isZh ? '我的 Ascend 圈层' : 'My Ascend Circle', icon: Users },
+    { to: '/wallet', label: isZh ? '积分明细记录' : 'Recent Loyalty Points Activities', icon: Activity },
+    { to: '/withdrawals', label: isZh ? '兑换奖励提现' : 'Redeem Rewards', icon: Banknote },
   ]
 
   const mobileBarItems = [
-    { to: '/dashboard', label: 'Home', icon: LayoutDashboard },
-    { to: '/shop', label: 'Shop', icon: ShoppingBag },
-    { to: '/vouchers', label: 'Vouchers', icon: Ticket },
-    { to: '/loyalty', label: 'Rewards', icon: Gift },
-    { to: '/withdrawals', label: 'Redeem', icon: Banknote },
+    { to: '/dashboard', label: isZh ? '首页' : 'Home', icon: LayoutDashboard },
+    { to: '/shop', label: isZh ? '商城' : 'Shop', icon: ShoppingBag },
+    { to: '/vouchers', label: isZh ? '优惠券' : 'Vouchers', icon: Ticket },
+    { to: '/loyalty', label: isZh ? '奖励' : 'Rewards', icon: Gift },
+    { to: '/withdrawals', label: isZh ? '提现' : 'Redeem', icon: Banknote },
   ]
 
   return (
@@ -109,7 +111,7 @@ export function CustomerLayout({ children }: { children: ReactNode }) {
                 >
                   <span className="flex items-center gap-3">
                     <Gift className="w-4 h-4 shrink-0 text-[#FFB800]" />
-                    <span>Loyalty &amp; Rewards</span>
+                    <span>{isZh ? '积分与奖励' : 'Loyalty & Rewards'}</span>
                   </span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${loyaltyOpen ? 'rotate-180' : ''}`} />
                 </button>

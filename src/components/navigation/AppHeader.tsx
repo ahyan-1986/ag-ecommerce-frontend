@@ -3,12 +3,14 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ShoppingBag, Menu, X, LogOut, Sparkles, LayoutDashboard, ShieldCheck } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { useAuth } from '../../contexts/AuthContext'
+import { useLanguage, LanguageSwitcher } from '../../contexts/LanguageContext'
 import { ordersApi } from '../../api/orders'
 import { AscendLogo } from '../brand/AscendLogo'
 import { TierBadge } from '../tier/TierBadge'
 
 export function AppHeader() {
   const { user, logout } = useAuth()
+  const { isZh } = useLanguage()
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -21,9 +23,9 @@ export function AppHeader() {
   const cartCount = cartItems.reduce((sum, i) => sum + i.quantity, 0)
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/shop', label: 'Shop' },
-    { to: '/membership', label: 'Ascend Circle' },
+    { to: '/', label: isZh ? '首页' : 'Home' },
+    { to: '/shop', label: isZh ? '活力商城' : 'Shop' },
+    { to: '/membership', label: isZh ? 'Ascend 圈层' : 'Ascend Circle' },
   ]
 
   return (
@@ -32,7 +34,9 @@ export function AppHeader() {
       <div className="bg-gradient-to-r from-[#FF5A36] via-[#FFB800] to-[#00C896] text-white text-[11px] sm:text-xs font-extrabold tracking-wide py-2 px-4 text-center shadow-sm">
         <span className="inline-flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5 shrink-0" />
-          Earn 15% Loyalty Points on Every Order • Share &amp; Earn 15% Across 2 Levels • Climb to Three Star for 45% Leadership Bonus!
+          {isZh
+            ? '每笔订单赚取 15% 积分回馈 • 分享 2 代好友各赚 15% • 晋升三星领袖享高达 45% 领导奖金！'
+            : 'Earn 15% Loyalty Points on Every Order • Share & Earn 15% Across 2 Levels • Climb to Three Star for 45% Leadership Bonus!'}
         </span>
       </div>
 
@@ -65,10 +69,12 @@ export function AppHeader() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2.5">
+            <LanguageSwitcher />
+
             <Link
               to="/cart"
               className="relative p-2.5 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF5A36] transition-all"
-              title="Shopping Cart"
+              title={isZh ? '购物车' : 'Shopping Cart'}
             >
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
@@ -86,7 +92,7 @@ export function AppHeader() {
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-extrabold bg-violet-50 text-violet-700 border border-violet-200 hover:bg-violet-100 transition"
                   >
                     <ShieldCheck className="w-4 h-4" />
-                    Admin
+                    {isZh ? '后台管理' : 'Admin'}
                   </Link>
                 )}
                 <Link
@@ -107,7 +113,7 @@ export function AppHeader() {
                     navigate('/')
                   }}
                   className="p-2 rounded-full text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition"
-                  title="Sign Out"
+                  title={isZh ? '退出登录' : 'Sign Out'}
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -118,10 +124,10 @@ export function AppHeader() {
                   to="/login"
                   className="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:text-[#FF5A36] transition"
                 >
-                  Sign In
+                  {isZh ? '登录' : 'Sign In'}
                 </Link>
                 <Link to="/register" className="btn-primary !py-2 !px-5 !text-xs">
-                  Join Free
+                  {isZh ? '免费注册' : 'Join Free'}
                 </Link>
               </div>
             )}
@@ -156,7 +162,7 @@ export function AppHeader() {
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2 px-4 py-2.5 rounded-2xl text-sm font-bold bg-orange-50 text-[#FF5A36]"
                 >
-                  <LayoutDashboard className="w-4 h-4" /> My Account Dashboard
+                  <LayoutDashboard className="w-4 h-4" /> {isZh ? '会员中心' : 'My Account Dashboard'}
                 </Link>
                 {(user.role === 'admin' || user.role === 'super_admin') && (
                   <Link
@@ -164,7 +170,7 @@ export function AppHeader() {
                     onClick={() => setMobileOpen(false)}
                     className="flex items-center gap-2 px-4 py-2.5 rounded-2xl text-sm font-bold bg-violet-50 text-violet-700"
                   >
-                    <ShieldCheck className="w-4 h-4" /> Admin Backoffice
+                    <ShieldCheck className="w-4 h-4" /> {isZh ? '管理后台' : 'Admin Backoffice'}
                   </Link>
                 )}
               </>
@@ -175,14 +181,14 @@ export function AppHeader() {
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 text-center py-2.5 rounded-full border-2 border-orange-200 text-sm font-bold text-[#FF5A36]"
                 >
-                  Sign In
+                  {isZh ? '登录' : 'Sign In'}
                 </Link>
                 <Link
                   to="/register"
                   onClick={() => setMobileOpen(false)}
                   className="flex-1 text-center btn-primary !py-2.5 !text-sm"
                 >
-                  Join Free
+                  {isZh ? '免费注册' : 'Join Free'}
                 </Link>
               </div>
             )}

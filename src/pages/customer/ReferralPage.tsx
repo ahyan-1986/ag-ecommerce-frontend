@@ -130,7 +130,7 @@ export default function ReferralPage() {
   function share() {
     if (navigator.share) {
       navigator.share({
-        title: 'Sertai Komuniti Makanan Kesihatan Asian Mum',
+        title: 'Sertai Komuniti Makanan Kesihatan Ascend Group',
         text: `Sertai saya dan nikmati diskaun sehingga 35% serta ganjaran usahawan! Gunakan kod rujukan saya: ${user?.referralCode}`,
         url: referralLink,
       }).catch(() => {})
@@ -150,7 +150,7 @@ export default function ReferralPage() {
           </div>
           <div>
             <h1 className="text-2xl font-black text-gray-900">Rangkaian Usahawan Saya</h1>
-            <p className="text-xs text-gray-500 mt-0.5">Program rakan kongsi & affiliate Asian Mum — raih komisen 3 peringkat</p>
+            <p className="text-xs text-gray-500 mt-0.5">Program rakan kongsi & affiliate Ascend Group — raih komisen 3 peringkat</p>
           </div>
         </div>
 
