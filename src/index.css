@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Ascend Group Dopamine Design System (Bright • Energetic • Joyful) ───── */
+:root {
+  --coral-500: #FF5A36;
+  --coral-600: #E84420;
+  --mango-500: #FFB800;
+  --mint-500:  #00C896;
+  --sky-500:   #06B6D4;
+  --berry-500: #EC4899;
+  --violet-500:#8B5CF6;
+
+  --canvas-bg: #FFFDF9;
+  --ink-dark:  #1E293B;
+  --ink-mid:   #475569;
+  --ink-muted: #64748B;
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--canvas-bg);
+    color: var(--ink-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, #FF5A36 0%, #FF8A00 100%);
+    box-shadow: 0 8px 22px rgba(255, 90, 54, 0.28);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 12px 28px rgba(255, 90, 54, 0.38);
+  }
+
+  .btn-mint {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, #00C896 0%, #06B6D4 100%);
+    box-shadow: 0 8px 22px rgba(0, 200, 150, 0.26);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-slate-900 transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, #FFD43B 0%, #FFB800 100%);
+    box-shadow: 0 8px 22px rgba(255, 184, 0, 0.30);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed;
+    border: 2px solid #FF5A36;
+    color: #FF5A36;
+    background: #FFFFFF;
+  }
+  .btn-secondary:hover {
+    background: #FFF4F1;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition hover:bg-orange-50 focus:outline-none disabled:opacity-50;
+    border: 1.5px solid #FFD0C2;
+    color: #E84420;
+    background: #FFFFFF;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-rose-600 disabled:opacity-50;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255, 197, 180, 0.35);
+    box-shadow: 0 10px 30px rgba(255, 90, 54, 0.06);
+    border-radius: 24px;
+  }
+
+  .dopamine-card {
+    @apply bg-white rounded-3xl border border-orange-100/80 shadow-soft transition-all duration-300;
+  }
+
+  .input {
+    @apply block w-full rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 outline-none transition-all text-slate-900;
+  }
+  .input:focus {
+    border-color: #FF5A36;
+    box-shadow: 0 0 0 4px rgba(255, 90, 54, 0.12);
+  }
+
+  .label {
+    @apply block text-xs font-bold uppercase tracking-wider mb-1.5 text-slate-600;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-pop;
+  }
+}
+
+/* ── Dopamine Marquee & Float Keyframes ─────────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFC5B4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF7854;
+}

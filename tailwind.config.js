@@ -1,0 +1,88 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50:  '#FFF4F1',
+          100: '#FFE4DC',
+          200: '#FFC5B4',
+          300: '#FF9D82',
+          400: '#FF7854',
+          500: '#FF5A36',
+          600: '#E84420',
+          700: '#C73314',
+          800: '#9E2912',
+          900: '#7D2312',
+        },
+        mint: {
+          50:  '#ECFEF9',
+          100: '#D0FBEF',
+          200: '#A3F6E0',
+          300: '#64ECCB',
+          400: '#2ADBB3',
+          500: '#00C896',
+          600: '#00A37B',
+          700: '#048264',
+        },
+        sun: {
+          50:  '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#FFB800',
+          600: '#D97706',
+        },
+        berry: {
+          50:  '#FDF2F8',
+          100: '#FCE7F3',
+          400: '#F472B6',
+          500: '#EC4899',
+          600: '#DB2777',
+        },
+        canvas: {
+          bg:   '#FFFDF9',
+          soft: '#FFF7F2',
+          mint: '#F2FEFA',
+          sun:  '#FFFCF0',
+          lilac:'#F8F5FF',
+        },
+        dopamine: {
+          coral:  '#FF5A36',
+          mango:  '#FFB800',
+          mint:   '#00C896',
+          sky:    '#06B6D4',
+          berry:  '#EC4899',
+          violet: '#8B5CF6',
+        },
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
+      },
+      boxShadow: {
+        'coral-sm': '0 6px 20px rgba(255, 90, 54, 0.22)',
+        'coral-md': '0 12px 32px rgba(255, 90, 54, 0.30)',
+        'mint-sm':  '0 6px 20px rgba(0, 200, 150, 0.22)',
+        'sun-sm':   '0 6px 20px rgba(255, 184, 0, 0.24)',
+        'soft':     '0 8px 30px rgba(15, 23, 42, 0.05)',
+        'pop':      '0 14px 36px rgba(255, 90, 54, 0.12)',
+      },
+      animation: {
+        'float':         'float 4s ease-in-out infinite',
+        'marquee':       'marquee 28s linear infinite',
+        'pulse-glow':    'pulse-glow 2.5s ease-in-out infinite',
+        'slide-up':      'slide-up 0.45s ease-out both',
+        'fade-in':       'fade-in 0.35s ease-out both',
+        'bounce-subtle': 'bounce-subtle 2.5s ease-in-out infinite',
+      },
+    },
+  },
+  plugins: [],
+}
